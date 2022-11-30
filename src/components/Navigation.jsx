@@ -10,27 +10,28 @@ function Navigation(props) {
     return (
         <>
             <nav className={styles["navigationContainer"]}>
-                <ul className={styles["navigationContent"]}><li className={styles["navigationItem"]}><NavLink
+                <ul className={styles["navigationContent"]}>
+                    <li className={styles["navigationItem"]}><NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/"}>
                             Home
                         </NavLink>
                     </li>
-                    <li>
+                    <li className={styles["navigationItem"]}>
                         <NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/login"}>
                             Login
                         </NavLink>
                     </li>
-                    <li>
+                    <li className={styles["navigationItem"]}>
                         <NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/blogposts"}>
                             Blog overzicht
                         </NavLink>
                     </li>
-                    <li>
+                    <li className={styles["navigationItem"]}>
                         <NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/blogposts/:blogId"}>
@@ -38,8 +39,8 @@ function Navigation(props) {
                         </NavLink>
                     </li>
                 </ul>
-                <ul>
-                    <li>
+                <ul className={styles["navigationButtonContent"]}>
+                    <li className={styles["navigationButtonItem"]}>
                         <button className={styles["navigationButtonItem"]}>Login</button>
                     </li>
                 </ul>
