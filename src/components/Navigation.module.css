@@ -33,3 +33,34 @@
 .navigationButtonItem{
     list-style-type: none;
 }
+
+.active-menu-link {
+    border-bottom: none;
+}
+
+.default-menu-link {
+    border-bottom: 1px solid black;
+}
+
+/*!*waarom werkt var(--dark) niet?*!
+nav ul a,
+nav ul a:visited{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.navigationContainer,
+.navigationContent,
+.navigationItem :visited{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.default-menu-link{
+    border-bottom: 1px solid transparent;
+}
+
+.active-menu-link{
+    border-bottom: 2px solid blue;
+    border-bottom: 1px solid var(--dark);
+}*/
