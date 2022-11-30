@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import {Route, Router, Routes} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import BlogOverzicht from "./pages/blogoverzicht/BlogOverzicht";
 import BlogPost from "./pages/blogpost/BlogPost";
+import NotFound from "./pages/notFound/NotFound";
 
 
 // stappen:
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/login" element={ <Login/> }/>
                 <Route path="/blogposts" element={ <BlogOverzicht/> }/>
                 <Route path="/blogposts/:blogId" element={ <BlogPost/> }/>
+                <Route path="*" element={<NotFound/>}/>
             </Routes>
         </>
     );
