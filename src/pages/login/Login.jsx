@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "../../components/Navigation.module.css";
 
 const Login = () => {
     return (
@@ -7,7 +8,7 @@ const Login = () => {
             <br/>
             <p>Druk op de knop om je in te loggen!</p>
             <br/>
-            <button>Inloggen</button>
+            <button className={styles["navigationButtonItem"]} >Login</button>
         </>
     );
 };

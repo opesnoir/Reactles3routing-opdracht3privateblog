@@ -1,21 +1,18 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
 import styles from "./Navigation.module.css";
+import {NavLink, useNavigate} from "react-router-dom";
 
-function Navlink(props) {
-    return null;
-}
-
-function Navigation(props) {
+const Navigation = ({auth, setAuth}) => {
+    const navigate = useNavigate()
     return (
         <>
             <nav className={styles["navigationContainer"]}>
                 <ul className={styles["navigationContent"]}>
                     <li className={styles["navigationItem"]}><NavLink
-                            className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
-                            to={"/"}>
-                            Home
-                        </NavLink>
+                        className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                        to={"/"}>
+                        Home
+                    </NavLink>
                     </li>
                     <li className={styles["navigationItem"]}>
                         <NavLink
@@ -31,22 +28,23 @@ function Navigation(props) {
                             Blog overzicht
                         </NavLink>
                     </li>
-                    <li className={styles["navigationItem"]}>
+                    {auth && <li> className={styles["navigationItem"]}>
                         <NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/blogposts/:blogId"}>
                             Blog post
                         </NavLink>
-                    </li>
+                    </li>}
                 </ul>
                 <ul className={styles["navigationButtonContent"]}>
-                    <li className={styles["navigationButtonItem"]}>
-                        <button className={styles["navigationButtonItem"]}>Login</button>
-                    </li>
+                <li className={styles["navigationButtonItem"]}>
+
+                    <button onClick={ () => setAuth( false ) }>Logout</button>
+                </li>
                 </ul>
             </nav>
         </>
     );
-}
+};
 
 export default Navigation;
