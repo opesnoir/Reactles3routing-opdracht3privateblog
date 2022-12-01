@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -15,16 +15,20 @@ import NotFound from "./pages/notFound/NotFound";
 
 function App() {
   // We houden in de state bij of iemand is "ingelogd" (simpele versie)
-  const [isAuthenticated, toggleIsAuthenticated ] = useState(false);
+  const [auth, setAuth ] = useState(false);
+
+
 
     return (
+
+
         <>
-            <Navigation/>
+            <Navigation auth={auth} setAuth={setAuth}/>
             <Routes>
                 <Route path="/" element={ <Home/> }/>
                 <Route path="/login" element={ <Login/> }/>
                 <Route path="/blogposts" element={ <BlogOverzicht/> }/>
-                <Route path="/blogposts/:blogId" element={ <BlogPost/> }/>
+                <Route path="/blogposts/:blogId" element={ auth ? <BlogPost/> : <Navigate to="/login"/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </>

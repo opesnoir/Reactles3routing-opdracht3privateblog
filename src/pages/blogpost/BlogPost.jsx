@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const BlogPost = () => {
     return (
         <>
-            <h1>Blogpost + titel </h1>
+            <h1>Blogpost + titel (private) </h1>
             <br/>
             <h2>Jaar datum en tijd </h2>
             <br/>

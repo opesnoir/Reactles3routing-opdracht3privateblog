@@ -24,14 +24,14 @@ const Navigation = ({auth, setAuth}) => {
                             Login
                         </NavLink>
                     </li>
-                    <li className={styles["navigationItem"]}>
+                    {auth && <li className={styles["navigationItem"]}>
                         <NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/blogposts"}>
                             Blog overzicht
                         </NavLink>
-                    </li>
-                    {auth && <li> className={styles["navigationItem"]}>
+                    </li>}
+                    {auth && <li className={styles["navigationItem"]}>
                         <NavLink
                             className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
                             to={"/blogposts/:blogId"}>
@@ -41,7 +41,8 @@ const Navigation = ({auth, setAuth}) => {
                 </ul>
                 <ul className={styles["navigationButtonContent"]}>
                     <li className={styles["navigationButtonItem"]}>
-                        <button onClick={() => setAuth(false)}>Logout</button>
+                        <button type="button" onClick={() => setAuth(true)}>Login</button>
+                        <button type="button" onClick={() => setAuth(false)}>Logout</button>
                     </li>
                 </ul>
             </nav>
