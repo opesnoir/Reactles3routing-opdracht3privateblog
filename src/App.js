@@ -9,9 +9,11 @@ import BlogPost from "./pages/blogpost/BlogPost";
 import NotFound from "./pages/notFound/NotFound";
 
 
+
 // stappen:
 //1. maak een navigatie component;
 //2. maak de vier pagina's in een anonieme functie aan en wikkel ze in App.js in Routes>Route;
+
 
 function App() {
   // We houden in de state bij of iemand is "ingelogd" (simpele versie)

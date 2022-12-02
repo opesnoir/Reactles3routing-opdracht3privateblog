@@ -1,19 +1,25 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import posts from '../../data/posts.json';
+
+//logt niet op de site, manier h1 en manier h2 +p ook niet waarom niet?
 
 const BlogPost = () => {
+    const {blogId} = useParams();
+    /*console.log(posts)*/
+    const postName = posts.find((post) =>{
+        return post.id === blogId
+    })
+
     return (
         <>
-            <h1>Blogpost + titel (private) </h1>
-            <br/>
-            <h2>Jaar datum en tijd </h2>
-            <br/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti facilis impedit nihil repellendus
-                voluptas? Accusantium adipisci aperiam commodi exercitationem incidunt porro sint. Exercitationem,
-                facilis ipsam necessitatibus nulla repellendus rerum voluptatibus.</p>
-        <Link to="/">Terug naar de Homepage</Link>
+            <article>
+             <h1>{postName.title}</h1>
+               <h2>{postName.date}</h2>
+                <p>{postName.content}</p>
+                <Link to="/">Terug naar de Homepage</Link>
+            </article>
         </>
-
     );
 };
 
