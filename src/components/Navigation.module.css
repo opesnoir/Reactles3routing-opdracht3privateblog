@@ -1,0 +1,66 @@
+
+/* Table of content
+        1. Global styles
+        2. Typography
+        3. Layout
+            3.1 Reusable
+            3.2 Other
+        4. Areas
+        4.1 Navigation / Header
+        4.2 Introduction
+            4.3 Section 1
+            4.7 Footer
+        5 Media queries
+ */
+
+/*      4.Areas                       */
+/*      4.1 Navigation and header     */
+/*      4.1.1 Navigation              */
+
+.navigationContainer,
+.navigationContent,
+.navigationButtonContent{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.navigationContainer{
+    justify-content: space-between;
+}
+
+.navigationItem,
+.navigationButtonItem{
+    list-style-type: none;
+}
+
+.active-menu-link {
+    border-bottom: none;
+}
+
+.default-menu-link {
+    border-bottom: 1px solid black;
+}
+
+/*!*waarom werkt var(--dark) niet?*!
+nav ul a,
+nav ul a:visited{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.navigationContainer,
+.navigationContent,
+.navigationItem :visited{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.default-menu-link{
+    border-bottom: 1px solid transparent;
+}
+
+.active-menu-link{
+    border-bottom: 2px solid blue;
+    border-bottom: 1px solid var(--dark);
+}*/
